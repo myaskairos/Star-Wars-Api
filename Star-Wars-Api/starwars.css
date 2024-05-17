@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+body {
+    margin: 15%;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('baby-yoda.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    text-align: center;
+    height: 100vh; 
+    font-family: 'Alegreya', sans-serif;
+    font-size: 3.5vw;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    border: 20px solid #0e2941;
+    background-color: rgba(12, 112, 212, 0.668);
+    padding: .3rem;
+
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.column {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #55ff00;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blanchedalmond;
+}
+
+.column{
+    justify-content: center;
+    padding: 5%;
+    color: #55ff00;
+}
+

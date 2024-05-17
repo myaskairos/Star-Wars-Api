@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Films</title>
+    <link rel="stylesheet" href="starwars.css">
+</head>
+<body>
+    <div class="container">
+        <div id="films" class="column"></div>
+    </div>
+
+    <div class="navigation">
+        <h1>Learn more about...</h1>
+        <a href="index.html">Nothing, take me back please!</a>
+        <p> or </p>
+        <a href="characters.html">  Your favorite character</a>
+    </div>
+
+    <script>
+        async function displayFilms() {
+            try {
+                const response = await fetch('https://swapi.dev/api/films/');
+                const data = await response.json();
+                const filmsList = document.getElementById('films');
+                filmsList.innerHTML = `<h2>Films</h2>`;
+                data.results.forEach(film => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>Title:</strong> ${film.title}<br>
+                                    <strong>Director:</strong> ${film.director}<br>
+                                    <strong>Producer:</strong> ${film.producer}<br>
+                                    <strong>Release Date:</strong> ${film.release_date}<br>
+                                    <strong>Opening Crawl:</strong> ${film.opening_crawl}`;
+                    filmsList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        displayFilms();
+    </script>
+</body>
+</html>
+
